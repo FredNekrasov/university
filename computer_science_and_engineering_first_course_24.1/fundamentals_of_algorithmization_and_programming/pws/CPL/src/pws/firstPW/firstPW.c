@@ -9,7 +9,7 @@ void task1() {
     printf_s("linear processes");
     int x = 0;
     scanf_s("%d", &x);
-    const float y = (abs(x) + pow(sin(x - 3), 2)) / pow(5 * x, 3);
+    const float y = (abs(x) + pow(sin(x), 2) - 3) / pow(5 * x, 3);
     printf_s("y = %f\n", y);
 }
 void task2P1() {
@@ -28,7 +28,7 @@ void task2P2() {
     float y = 0, z = 0;
     scanf_s("%f", &y);
     if (1 <= y <= 2) {
-        z = pow(y, 1 / 3) + exp(y);
+        z = pow(y, 1 / 3) + M_E * y;// exp(y);
     } else if (3 < y <= 5) {
         z = y + 2;
     } else if (y > 7) {
@@ -58,9 +58,9 @@ void task5P1() {
     int x = 0, sumN = 0;
     scanf_s("%d", &x);
     for (int n = 1; n <= 10; n++) {
-        sumN += n;
+        sumN += pow(n, 2);
     }
-    const float y = (pow(sumN, 2) + sin(x)) / (x + 2);
+    const float y = (sumN + sin(x)) / (x + 2);
     printf_s("y = %.2f\n", y);
 }
 void task5P2() {
@@ -68,9 +68,9 @@ void task5P2() {
     int y = 0, multiplyN = 1;
     scanf_s("%d", &y);
     for (int n = 1; n <= 3; n++) {
-        multiplyN *= n;
+        multiplyN *= pow(n, 2);
     }
-    const float z = pow(y, 3) + pow(multiplyN, 2);
+    const float z = pow(y, 3) + multiplyN;
     printf_s("z = %.2f\n", z);
 }
 void task6() {
