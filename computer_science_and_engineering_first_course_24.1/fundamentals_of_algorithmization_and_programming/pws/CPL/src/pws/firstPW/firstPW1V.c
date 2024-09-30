@@ -5,14 +5,14 @@
 #include <stdlib.h>
 #include <tgmath.h>
 
-void task1() {
+void firstVTask1() {
     printf_s("linear processes");
     int x = 0;
     scanf_s("%d", &x);
     const float y = (abs(x) + pow(sin(x), 2) - 3) / pow(5 * x, 3);
     printf_s("y = %f\n", y);
 }
-void task2P1() {
+void firstVTask2P1() {
     printf_s("Branching computing processes");
     int x = 0;
     scanf_s("%d", &x);
@@ -23,7 +23,7 @@ void task2P1() {
     //const float y = x <= 3 ? pow(sin(x), 2) - 3 : pow(log(x), 0.5) + pow(cos(x), 2);
     printf_s("y = %f\n", y);
 }
-void task2P2() {
+void firstVTask2P2() {
     printf_s("Branching computing processes");
     float y = 0, z = 0;
     scanf_s("%f", &y);
@@ -36,14 +36,14 @@ void task2P2() {
     }
     printf_s("z = %f\n", z);
 }
-void task3() {
+void firstVTask3() {
     printf_s("cyclic processes");
     for (float x = 0.5f; x < 3.5; x += 0.5f) {
         const float y = sin(x) + fabsf(x) + pow(2, x);
         printf_s("y = %.2f\n", y);
     }
 }
-void task4() {
+void firstVTask4() {
     printf_s("tabulating functions of 2 variables");
     float a = -3.1f;
     for (float x = 0; x <= 1; x += 0.1f) {
@@ -53,7 +53,7 @@ void task4() {
         }
     }
 }
-void task5P1() {
+void firstVTask5P1() {
     printf_s("calculating the sum\n");
     int x = 0, sumN = 0;
     scanf_s("%d", &x);
@@ -63,7 +63,7 @@ void task5P1() {
     const float y = (sumN + sin(x)) / (x + 2);
     printf_s("y = %.2f\n", y);
 }
-void task5P2() {
+void firstVTask5P2() {
     printf_s("calculating the multiplication\n");
     int y = 0, multiplyN = 1;
     scanf_s("%d", &y);
@@ -73,7 +73,7 @@ void task5P2() {
     const float z = pow(y, 3) + multiplyN;
     printf_s("z = %.2f\n", z);
 }
-void task6() {
+void firstVTask6() {
     printf_s("tabulating the function and finding the min, max\n");
     float a = 0, b = 0, min = INT_MAX, max = INT_MIN, y = 0, p = 1, s = 0;
     for (int k = 1; k <= 5; k++) {
@@ -102,7 +102,7 @@ void task6() {
 // the sum of positive elements,
 // find the max element and its index,
 // build a new array of elements whose value is greater than the specified number of P.
-void task7() {
+void firstVTask7() {
     printf_s("array of n elements\ninput n: ");
     int n = 0, sum = 0, max = 0, maxIndex = 0;
     scanf_s("%d", &n);
@@ -132,7 +132,7 @@ void task7() {
 // В матрице nxm найти min элемент и его индексы,
 // построить вектор из максимальных элементов по строкам,
 // найти среднее положительных элементов матрицы
-void task8() {
+void firstVTask8() {
     printf_s("matrix nxm\ninput n, m: ");
     int n = 0, m = 0;
     scanf_s("%d%d", &n, &m);
@@ -152,7 +152,8 @@ void task8() {
         }
     }
     printf("min = %d, minI = %d, minJ = %d\n", min, minI, minJ);
-    int maxVector[n > m ? n : m];
+    // построить вектор из максимальных элементов по строкам
+    int maxVector[n];
     for (int i = 0; i < n; i++) {
         maxVector[i] = 0;
         for (int j = 0; j < m; j++) {
