@@ -1,19 +1,8 @@
 #include <stdio.h>
 #include <tgmath.h>
-#include "pws/firstPW/firstPW.c"
 
 int main() {
     printf("Hello, World!\n");
-    task1();
-    task2P1();
-    task2P2();
-    task3();
-    task4();
-    task5P1();
-    task5P2();
-    task6();
-    task7();
-    task8();
     return 0;
 }
 
