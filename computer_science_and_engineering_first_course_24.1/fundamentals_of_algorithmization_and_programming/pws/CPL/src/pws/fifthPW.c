@@ -1,25 +1,9 @@
+//
+// Created by fred on 15.10.2024.
+//
 #include <stdio.h>
 #include <stdlib.h>
-#include <tgmath.h>
 
-int* createIntArray(const int n) {
-    int* array = calloc(n, sizeof(int));
-    if (array == NULL) {
-        free(array);
-        return nullptr;
-    }
-    for (int i = 0; i < n; i++) array[i] = rand() % 10;
-    return array;
-}
-float* createFloatArray(const int n, int* array1, int* array2) {
-    float* array = calloc(n, sizeof(float));
-    if (array == NULL) {
-        free(array);
-        return nullptr;
-    }
-    for (int i = 0; i < n; i++) array[i] = rand() % 10;
-    return array;
-}
 void outputIntArray(const int n, int array[]) {
     for (int i = 0; i < n; i++) printf("%d ", array[i]);
 }
@@ -57,12 +41,9 @@ int fifthPW3Task() {
     printf("input n: ");
     scanf_s("%d", &n);
     if (n > 13) return printf("error: n > 13");
-    int *array1 = createIntArray(n), *array2 = createIntArray(n);
-    if (array1 == NULL || array2 == NULL) {
-        free(array1);
-        free(array2);
-        return printf("error: array1 and array2 are NULL");
-    }
+    int array1[n], array2[n];
+    for (int i = 0; i < n; i++) array1[i] = rand() % 10;
+    for (int i = 0; i < n; i++) array2[i] = rand() % 10;
     printf("\narray1: ");
     outputIntArray(n, array1);
     printf("\narray2: ");
@@ -73,7 +54,9 @@ int fifthPW3Task() {
         free(array3);
         return printf("error: array3 is NULL");
     }
-
+    for (int i = 0; i < n; i++) {
+        if (!isZero(array2[i])) array3[i] = (float)array1[i] / (float)array2[i];
+    }
     printf("\narray3: ");
     outputFloatArray(n, array3);
     const float median = calculateMedian(array3, n);
@@ -86,33 +69,4 @@ int fifthPW3Task() {
     printf("\ndeviation: %.3f", deviation);
     free(array3);
     return 0;
-}
-int main() {
-    printf("Hello, World!\n");
-    fifthPW3Task();
-    return 0;
-}
-
-void independentWork() {
-    float y = 0;
-    for (int a = 1; a <= 3; a += 1) {
-        float maxY = -1 * exp(24);
-        float maxX = 0;
-        float minY = exp(24);
-        float minX = 0;
-        printf("a = %d\n", a);
-        for (float x = 0.5f; x < 3.5; x += 0.5f) {// здесь интервал меняем
-            y = sin(x) + fabsf(x) + pow(2, x);// здесь формулу поменять
-            printf("x = %.2f, y = %.2f\n", x, y);
-            if (y > maxY) {
-                maxY = y;
-                maxX = x;
-            }
-            if (y < minY) {
-                minY = y;
-                minX = x;
-            }
-        }
-        printf("maxX = %.2f, maxY = %.2f\nminX = %.2f, minY = %.2f\n", maxX, maxY, minX, minY);
-    }
 }

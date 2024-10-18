@@ -83,7 +83,6 @@ void firstVTask6() {
         scanf_s("%f %f", &a, &b);
         const float x = sqrt(a) + 2 * a * b + cos(a);
         if (x < 3) {
-            s = 0;
             for (int n = 1; n <= 10; n++) {
                 s += cos(n * x);
             }
