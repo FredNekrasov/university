@@ -9,14 +9,14 @@
 int fourthPW3Task() {
     srand(3u);
     int n = 0;
-    printf("input n: ");
+    printf("input n:");
     scanf_s("%d", &n);
     if (n > 13) return printf("error: n > 13");
     int array1[n], array2[n];
     float array3[n];
     for (int i = 0; i < n; i++) array1[i] = rand() % 10;
     for (int i = 0; i < n; i++) array2[i] = rand() % 15;
-    printf("\narray1: ");
+    printf("array1: ");
     for (int i = 0; i < n; i++) printf("%d ", array1[i]);
     printf("\narray2: ");
     for (int i = 0; i < n; i++) printf("%d ", array2[i]);

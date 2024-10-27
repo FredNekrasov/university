@@ -1,8 +1,9 @@
+//
+// Created by fred on 20.10.2024.
+//
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-
-#define n 3
+#define n 30
 
 struct InformationAboutEnterprises {
     char* name;
@@ -79,9 +80,7 @@ int seventhPW3Task() {
         scanf_s("%d", &choice);
         switch (choice) {
             case 0:// запрашивать нижнюю границу процента выполнения плана по персоналу;
-                for (int i = 0; i < n; i++) {
-                    if (enterprises[i].planForEmployees < 0.5f) outputIAE(enterprises[i], i);
-                }
+                for (int i = 0; i < n; i++) if (enterprises[i].planForEmployees < 0.5f) outputIAE(enterprises[i], i);
                 break;
             case 1:// копировать из исходной в рабочую таблицу строки с процентом выполнения плана по персоналу, большим заданного;
                 printf("input i: ");
@@ -102,32 +101,4 @@ int seventhPW3Task() {
     for (int i = 0; i < n; i++) free(enterprises[i].name);
     free(enterprises);
     return 0;
-}
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}
-
-void independentWork() {
-    float y = 0;
-    for (int a = 1; a <= 3; a += 1) {
-        double maxY = -1 * exp(24);
-        double maxX = 0;
-        double minY = exp(24);
-        double minX = 0;
-        printf("a = %d\n", a);
-        for (double x = 0.5; x < 3.5; x += 0.5) {
-            y = sin(x) + fabs(x) + pow(2, x);
-            printf("x = %.2f, y = %.2f\n", x, y);
-            if (y > maxY) {
-                maxY = y;
-                maxX = x;
-            }
-            if (y < minY) {
-                minY = y;
-                minX = x;
-            }
-        }
-        printf("maxX = %.2f, maxY = %.2f\nminX = %.2f, minY = %.2f\n", maxX, maxY, minX, minY);
-    }
 }
