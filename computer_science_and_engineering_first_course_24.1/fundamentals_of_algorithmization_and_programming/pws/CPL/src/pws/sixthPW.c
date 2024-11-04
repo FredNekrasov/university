@@ -7,7 +7,7 @@
 // максимальный элемент для каждой строки;
 // подсчитать сумму найденных элементов;
 // выбрать минимальный из них.
-int sixthPW3Task() {
+int sixthPW3TaskV1() {
     srand(3u);
     int n = 0, m = 0;
     printf("input n, m:");
@@ -42,6 +42,29 @@ int sixthPW3Task() {
             if (array[i][j] < min) min = array[i][j];
         }
     }
+    printf("min = %d\n", min);
+    return 0;
+}
+int sixthPW3TaskV2() {
+    srand(3u);
+    int n = 0;
+    printf("input n:");
+    scanf_s("%d", &n);
+    if (n > 15) return printf("error: n > 15");
+    int array[n][n], sum = 0, min = INT_MAX;
+    for (int i = 0; i < n; i++) {
+        printf("|");
+        int max = INT_MIN;
+        for (int j = 0; j < n; j++) {
+            array[i][j] = rand() % 10;
+            printf(" %d |", array[i][j]);
+            if (array[i][j] > max) max = array[i][j];
+            if (array[i][j] < min) min = array[i][j];
+            sum += array[i][j];
+        }
+        printf(" max element in %d row = %d\n", i, max);
+    }
+    printf("sum of all elements = %d\n", sum);
     printf("min = %d\n", min);
     return 0;
 }
