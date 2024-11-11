@@ -1,0 +1,68 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0" version="24.8.4">
+  <diagram name="Страница — 1" id="lo0vhHA-VO-0c0p5iB9p">
+    <mxGraphModel dx="1106" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-1" value="start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;fontFamily=Times New Roman;labelBackgroundColor=none;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="370" y="130" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-2" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=hexagon;perimeter=hexagonPerimeter2;arcSize=6;size=0.2;strokeWidth=2;fontFamily=Times New Roman;labelBackgroundColor=none;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="370" y="250" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-3" value="&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; text-align: left; font-size: 12px; text-wrap: nowrap; box-sizing: content-box !important;&quot; class=&quot;mjx-mi&quot; id=&quot;MJXc-Node-1737&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.478em 0.182em 0.3em 0px; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-math-I&quot;&gt;y&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px 0.333em; border: 0px; display: inline-block; text-align: left; font-size: 12px; text-wrap: nowrap; box-sizing: content-box !important;&quot; class=&quot;mjx-mo&quot; id=&quot;MJXc-Node-1738&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.062em 0px 0.3em; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;=&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; text-align: left; font-size: 12px; text-wrap: nowrap; box-sizing: content-box !important;&quot; class=&quot;mjx-mrow&quot; id=&quot;MJXc-Node-1739&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-mi&quot; id=&quot;MJXc-Node-1740&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.359em 0px; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;sin&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-mo&quot; id=&quot;MJXc-Node-1741&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; text-align: left; font-size: 12px; text-wrap: nowrap; box-sizing: content-box !important;&quot; class=&quot;mjx-mi&quot; id=&quot;MJXc-Node-1742&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.24em 0px 0.3em; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-math-I&quot;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px 0.267em; border: 0px; display: inline-block; text-align: left; font-size: 12px; text-wrap: nowrap; box-sizing: content-box !important;&quot; class=&quot;mjx-mo&quot; id=&quot;MJXc-Node-1743&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.3em 0px 0.418em; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; text-align: left; font-size: 12px; text-wrap: nowrap; box-sizing: content-box !important;&quot; class=&quot;mjx-mrow&quot; id=&quot;MJXc-Node-1744&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-mo&quot; id=&quot;MJXc-Node-1745&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.478em 0px 0.597em; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;|&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-mi&quot; id=&quot;MJXc-Node-1746&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.24em 0px 0.3em; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-math-I&quot;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-mo&quot; id=&quot;MJXc-Node-1747&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.478em 0px 0.597em; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;|&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px 0.267em; border: 0px; display: inline-block; text-align: left; font-size: 12px; text-wrap: nowrap; box-sizing: content-box !important;&quot; class=&quot;mjx-mo&quot; id=&quot;MJXc-Node-1748&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.3em 0px 0.418em; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; text-align: left; font-size: 12px; text-wrap: nowrap; box-sizing: content-box !important;&quot; class=&quot;mjx-msup&quot; id=&quot;MJXc-Node-1749&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-base&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-mn&quot; id=&quot;MJXc-Node-1750&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.359em 0px; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px 0.071em 0px 0px; border: 0px; display: inline-block; font-size: 12px; vertical-align: 0.591em; box-sizing: content-box !important;&quot; class=&quot;mjx-sup&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; border: 0px; display: inline-block; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-mi&quot; id=&quot;MJXc-Node-1751&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0.24em 0px 0.3em; border: 0px; display: block; white-space-collapse: preserve; font-size: 12px; box-sizing: content-box !important;&quot; class=&quot;mjx-char MJXc-TeX-math-I&quot;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontFamily=Times New Roman;labelBackgroundColor=none;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="370" y="370" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-4" value="output y" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;fontFamily=Times New Roman;labelBackgroundColor=none;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="370" y="530" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-5" value="end" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;fontFamily=Times New Roman;labelBackgroundColor=none;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="370" y="660" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="S7xhXAOyq1qpqEzdcD1j-1" target="S7xhXAOyq1qpqEzdcD1j-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="420" as="sourcePoint" />
+            <mxPoint x="440" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-8" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;x = 0.5; x &amp;lt; 3.5;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&amp;nbsp;x += 0.5&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="370" y="250" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="S7xhXAOyq1qpqEzdcD1j-8" target="S7xhXAOyq1qpqEzdcD1j-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="420" as="sourcePoint" />
+            <mxPoint x="440" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="S7xhXAOyq1qpqEzdcD1j-3" target="S7xhXAOyq1qpqEzdcD1j-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="420" as="sourcePoint" />
+            <mxPoint x="440" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="S7xhXAOyq1qpqEzdcD1j-4" target="S7xhXAOyq1qpqEzdcD1j-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="420" as="sourcePoint" />
+            <mxPoint x="440" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="620" />
+              <mxPoint x="300" y="620" />
+              <mxPoint x="300" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S7xhXAOyq1qpqEzdcD1j-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="S7xhXAOyq1qpqEzdcD1j-8" target="S7xhXAOyq1qpqEzdcD1j-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="420" as="sourcePoint" />
+            <mxPoint x="440" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="280" />
+              <mxPoint x="540" y="630" />
+              <mxPoint x="420" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
