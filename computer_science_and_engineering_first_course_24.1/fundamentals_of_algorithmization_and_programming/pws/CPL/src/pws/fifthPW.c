@@ -62,8 +62,9 @@ int fifthPW3Task() {
     if (array1 == NULL || array2 == NULL) {
         free(array1);
         free(array2);
-        return printf("error: array1 and array2 are NULL");
+        return printf("error: array1 or array2 are NULL");
     }
+
     printf("\narray1: ");
     outputIntArray(n, array1);
     printf("\narray2: ");
@@ -80,13 +81,15 @@ int fifthPW3Task() {
     outputFloatArray(n, array3);
 
     const float median = calculateMedian(array3, n);
-    printf("\nmedian: %.3f", median);
     const float sum = sumOfArrayElements(array3, n);
-    const float average = sum / (float)n;
-    printf("\naverage: %.3f", average);
 
+    const float average = sum / (float)n;
     const float deviation = median - average;
+
+    printf("\nmedian: %.3f", median);
+    printf("\naverage: %.3f", average);
     printf("\ndeviation: %.3f", deviation);
+
     free(array1);
     free(array2);
     free(array3);
