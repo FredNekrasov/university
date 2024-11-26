@@ -1,11 +1,11 @@
 //
-// Created by fred on 25.11.2024.
+// Created by fred on 26.11.2024.
 //
 #include <stdio.h>
 #include <math.h>
 #include <limits.h>
 
-int AlKatePW3() {
+int pw3AlKate() {
     for (int a = 1; a <= 10; a += 3) {
         printf("\t a = %d\n", a);// \t это tab, а \n это перевод на следующую строку
         /*
