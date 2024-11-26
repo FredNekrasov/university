@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 // 1. Подсчитать разность сумм четных и нечетных элементов массива (элементов с четными и нечетными значениями).
-int AlV1Task() {// AlVectorsFirstTask
+int AlexV1Task() {// AlexVectorsFirstTask
     int n = 0;// количество элементов в массиве
     printf("input n:");
     scanf_s("%d", &n);// ввод количества элементов
@@ -27,7 +27,7 @@ int AlV1Task() {// AlVectorsFirstTask
     return 0;
 }
 // 2. Найти значение максимального элемента среди четных (по значению) элементов, расположенных до первого нечетного элемента.
-int AlV2Task() {// AlVectorsSecondTask
+int AlexV2Task() {// AlexVectorsSecondTask
     int n = 0;// количество элементов в массиве
     printf("input n:");
     scanf_s("%d", &n);// ввод количества элементов
@@ -52,7 +52,7 @@ int AlV2Task() {// AlVectorsSecondTask
 // массив                 7 2 6 5 4 4 10 3 9
 // четные элементы          2 6   4 4 10
 // массив после удаления  7 5 3 9
-int AlV3TaskV1() { // AlVectorsThirdTaskVersion1
+int AlexV3TaskV1() { // AlexVectorsThirdTaskVersion1
     int n = 0;// количество элементов в массиве
     printf("input n:");
     scanf_s("%d", &n);// ввод количества элементов
@@ -78,7 +78,7 @@ int AlV3TaskV1() { // AlVectorsThirdTaskVersion1
     }
     return 0;
 }
-int AlV3TaskV2() { // AlVectorsThirdTaskVersion2
+int AlexV3TaskV2() { // AlexVectorsThirdTaskVersion2
     int n = 9;// количество элементов в массиве
     srand(n);// инициализация генератора случайных чисел
     int array[n];// объявление массива с n элементами
@@ -111,7 +111,7 @@ int AlV3TaskV2() { // AlVectorsThirdTaskVersion2
     return 0;
 }
 // 4. если среднеарифметическое элементов массива больше 5, то отсортировать массив по возрастанию, иначе - по убыванию
-int AlV4Task() { // AlVectorsFourthTask
+int AlexV4Task() { // AlexVectorsFourthTask
     int n = 0;// количество элементов в массиве
     printf("input n:");
     scanf_s("%d", &n);// ввод количества элементов
