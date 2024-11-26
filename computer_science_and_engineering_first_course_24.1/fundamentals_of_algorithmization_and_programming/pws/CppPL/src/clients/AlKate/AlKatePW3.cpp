@@ -1,9 +1,8 @@
 //
 // Created by fred on 26.11.2024.
 //
-#include <stdio.h>
-#include <math.h>
-#include <limits.h>
+#include <iostream>
+#include <cmath>
 
 int pw3AlKate() {
     for (int a = 1; a <= 10; a += 3) {

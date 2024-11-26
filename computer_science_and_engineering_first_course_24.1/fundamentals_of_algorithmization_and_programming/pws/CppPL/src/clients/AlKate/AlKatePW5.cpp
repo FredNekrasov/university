@@ -2,7 +2,6 @@
 // Created by fred on 26.11.2024.
 //
 #include <iostream>
-#include <cstdlib>
 
 using namespace std;//Импорт пространства имен std, благодаря которому мы можем использовать функции cout, cin и т.д. без указания std::
 
@@ -30,7 +29,7 @@ void outputArray(const int n, int array[]) {
         cout << array[i] << " ";// c++'ный аналог printf("%d ", array[i]);
     }
 }
-int findMinValue(int* array, int n) {
+int findMinValue(const int* array, int n) {
     int minValue = array[0];// Сразу присваиваем переменной значение первого элемента соответствующего массива, чтобы пропустить 1 проход цикла.
     for (int i = 1; i < n; i++) {
         /*
@@ -65,17 +64,15 @@ int pw5AlKate() {
     cout <<"\narray2: ";
     outputArray(n, array2);
 
-    int minArr1 = findMinValue(array1, n), minArr2 = findMinValue(array2, n);
+    int min1 = findMinValue(array1, n), min2 = findMinValue(array2, n);
 
-    cout <<"\nthe min element of the array1: " << minArr1;// c++'ный аналог printf("the min element of the array1: %d", minArr1);
-    cout <<"\nthe min element of the array2: " << minArr2;
+    cout <<"\nthe min element of the array1: " << min1;// c++'ный аналог printf("the min element of the array1: %d", min1);
+    cout <<"\nthe min element of the array2: " << min2;
 
     int multiplication = 0;
-    if (minArr1 < minArr2) {
+    if (min1 < min2) {
         multiplication = multiplyPositiveElementsOfArray(array1, n);
-    } else {
-        multiplication = multiplyPositiveElementsOfArray(array2, n);
-    }
+    } else multiplication = multiplyPositiveElementsOfArray(array2, n);
 
     cout <<"\nmultiplication of positive elements of the array: " << multiplication;// c++'ный аналог printf("multiplication of positive elements of the array: %d", multiplication);
 
