@@ -5,17 +5,17 @@
 #include <stdlib.h>
 #define n 3
 
-struct InformationAboutEnterprises {
+struct InformationAboutEnterprise {
     char* name;
     int allEmployees;
     int industrialEmployees;
     int notIndustrialEmployees;
     float notIndustrialEmployeesPercentage;
     float planForEmployees;
-} typedef infAboutEnterprises;
+} typedef infAboutEnterprise;
 
-infAboutEnterprises* creatingAndFillingIAEs() {
-    infAboutEnterprises* enterprises = calloc(n, sizeof(infAboutEnterprises));
+infAboutEnterprise* creatingAndFillingIAEs() {
+    infAboutEnterprise* enterprises = calloc(n, sizeof(infAboutEnterprise));
     if (enterprises == NULL) {
         free(enterprises);
         return nullptr;
@@ -41,11 +41,11 @@ infAboutEnterprises* creatingAndFillingIAEs() {
     }
     return enterprises;
 }
-infAboutEnterprises* sortedIAEsByAllEmployees(infAboutEnterprises* enterprises) {
+infAboutEnterprise* sortedIAEsByAllEmployees(infAboutEnterprise* enterprises) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = i + 1; j < n; j++) {
             if (enterprises[i].allEmployees < enterprises[j].allEmployees) {
-                infAboutEnterprises temp = enterprises[i];
+                infAboutEnterprise temp = enterprises[i];
                 enterprises[i] = enterprises[j];
                 enterprises[j] = temp;
             }
@@ -53,7 +53,7 @@ infAboutEnterprises* sortedIAEsByAllEmployees(infAboutEnterprises* enterprises) 
     }
     return enterprises;
 }
-void printIAE(const infAboutEnterprises enterprise, const int i) {
+void printIAE(const infAboutEnterprise enterprise, const int i) {
     printf("| %d enterprise", i + 1);
     printf(" name: %s\t\t|\n", enterprise.name);
     printf("| allEmployees: %d\t\t\t|\n", enterprise.allEmployees);
@@ -63,8 +63,8 @@ void printIAE(const infAboutEnterprises enterprise, const int i) {
     printf("| planForEmployees: %.2f\t\t|\n", enterprise.planForEmployees);
     printf("-----------------------------------------\n");
 }
-char* smallestNotIndustrialEmployeesPercentageEnterprise(const infAboutEnterprises* enterprises) {
-    infAboutEnterprises iae = enterprises[0];
+char* smallestNotIndustrialEmployeesPercentageEnterprise(const infAboutEnterprise* enterprises) {
+    infAboutEnterprise iae = enterprises[0];
     int iaeIndex = 0;
     for (int i = 1; i < n; i++) {
         if (enterprises[i].notIndustrialEmployeesPercentage < iae.notIndustrialEmployeesPercentage) {
@@ -75,7 +75,7 @@ char* smallestNotIndustrialEmployeesPercentageEnterprise(const infAboutEnterpris
     printIAE(iae, iaeIndex);
     return iae.name;
 }
-void printIAEFilteredByPlanForEmployees(const infAboutEnterprises* enterprises) {
+void printIAEFilteredByPlanForEmployees(const infAboutEnterprise* enterprises) {
     float planForEmployees = 0;
     printf("input planForEmployees:");
     scanf_s("%f", &planForEmployees);
@@ -83,13 +83,13 @@ void printIAEFilteredByPlanForEmployees(const infAboutEnterprises* enterprises) 
         if (enterprises[i].planForEmployees >= planForEmployees) printIAE(enterprises[i], i);
     }
 }
-void printLowerBoundOfPlanForEmployees(const infAboutEnterprises* enterprises) {
+void printLowerBoundOfPlanForEmployees(const infAboutEnterprise* enterprises) {
     for (int i = 0; i < n; i++) {
         if (enterprises[i].planForEmployees < 0.5f) printIAE(enterprises[i], i);
     }
 }
 int seventhPW3Task() {
-    infAboutEnterprises* enterprises = creatingAndFillingIAEs();
+    infAboutEnterprise* enterprises = creatingAndFillingIAEs();
     if (enterprises == NULL) return printf("error: enterprises pointer is NULL");
     enterprises = sortedIAEsByAllEmployees(enterprises);
     for (int i = 0; i < n; i++) printIAE(enterprises[i], i);
@@ -97,7 +97,7 @@ int seventhPW3Task() {
     int choice = -1;
     char* enterpriseName = smallestNotIndustrialEmployeesPercentageEnterprise(enterprises);
     while (choice != 0) {
-        printf("input i:");
+        printf("1 - lowerBoundOfPlanForEmployees\n2 - printIAEFilteredByPlanForEmployees\n3 - smallestNotIndustrialEmployeesPercentageEnterprise\n4 - print all\n0 - exit\ninput i:");
         scanf_s("%d", &choice);
         switch (choice) {
             case 1:// запрашивать нижнюю границу процента выполнения плана по персоналу;
