@@ -3,7 +3,6 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#define n 3
 
 struct InformationAboutEnterprise {
     char* name;
@@ -14,7 +13,7 @@ struct InformationAboutEnterprise {
     float planForEmployees;
 } typedef infAboutEnterprise;
 
-infAboutEnterprise* creatingAndFillingIAEs() {
+infAboutEnterprise* creatingAndFillingIAEs(int n) {
     infAboutEnterprise* enterprises = calloc(n, sizeof(infAboutEnterprise));
     if (enterprises == NULL) {
         free(enterprises);
@@ -41,7 +40,7 @@ infAboutEnterprise* creatingAndFillingIAEs() {
     }
     return enterprises;
 }
-infAboutEnterprise* sortedIAEsByAllEmployees(infAboutEnterprise* enterprises) {
+infAboutEnterprise* sortedIAEsByAllEmployees(int n, infAboutEnterprise* enterprises) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = i + 1; j < n; j++) {
             if (enterprises[i].allEmployees < enterprises[j].allEmployees) {
@@ -63,7 +62,7 @@ void printIAE(const infAboutEnterprise enterprise, const int i) {
     printf("| planForEmployees: %.2f\t\t|\n", enterprise.planForEmployees);
     printf("-----------------------------------------\n");
 }
-char* smallestNotIndustrialEmployeesPercentageEnterprise(const infAboutEnterprise* enterprises) {
+char* smallestNotIndustrialEmployeesPercentageEnterprise(const int n, const infAboutEnterprise* enterprises) {
     infAboutEnterprise iae = enterprises[0];
     int iaeIndex = 0;
     for (int i = 1; i < n; i++) {
@@ -75,7 +74,7 @@ char* smallestNotIndustrialEmployeesPercentageEnterprise(const infAboutEnterpris
     printIAE(iae, iaeIndex);
     return iae.name;
 }
-void printIAEFilteredByPlanForEmployees(const infAboutEnterprise* enterprises) {
+void printIAEFilteredByPlanForEmployees(int n, const infAboutEnterprise* enterprises) {
     float planForEmployees = 0;
     printf("input planForEmployees:");
     scanf_s("%f", &planForEmployees);
@@ -83,28 +82,32 @@ void printIAEFilteredByPlanForEmployees(const infAboutEnterprise* enterprises) {
         if (enterprises[i].planForEmployees >= planForEmployees) printIAE(enterprises[i], i);
     }
 }
-void printLowerBoundOfPlanForEmployees(const infAboutEnterprise* enterprises) {
+void printLowerBoundOfPlanForEmployees(int n, const infAboutEnterprise* enterprises) {
     for (int i = 0; i < n; i++) {
         if (enterprises[i].planForEmployees < 0.5f) printIAE(enterprises[i], i);
     }
 }
 int seventhPW3Task() {
-    infAboutEnterprise* enterprises = creatingAndFillingIAEs();
+    int n;
+    printf("input the number of enterprises:");
+    scanf_s("%d", &n);
+    if (n <= 0) return printf("error: n <= 0");
+    infAboutEnterprise* enterprises = creatingAndFillingIAEs(n);
     if (enterprises == NULL) return printf("error: enterprises pointer is NULL");
-    enterprises = sortedIAEsByAllEmployees(enterprises);
+    enterprises = sortedIAEsByAllEmployees(n, enterprises);
     for (int i = 0; i < n; i++) printIAE(enterprises[i], i);
     printf("\n");
     int choice = -1;
-    char* enterpriseName = smallestNotIndustrialEmployeesPercentageEnterprise(enterprises);
+    char* enterpriseName = smallestNotIndustrialEmployeesPercentageEnterprise(n, enterprises);
     while (choice != 0) {
         printf("1 - lowerBoundOfPlanForEmployees\n2 - printIAEFilteredByPlanForEmployees\n3 - smallestNotIndustrialEmployeesPercentageEnterprise\n4 - print all\n0 - exit\ninput i:");
         scanf_s("%d", &choice);
         switch (choice) {
             case 1:// запрашивать нижнюю границу процента выполнения плана по персоналу;
-                printLowerBoundOfPlanForEmployees(enterprises);
+                printLowerBoundOfPlanForEmployees(n, enterprises);
                 break;
             case 2:// копировать из исходной в рабочую таблицу строки с процентом выполнения плана по персоналу, большим заданного;
-                printIAEFilteredByPlanForEmployees(enterprises);
+                printIAEFilteredByPlanForEmployees(n, enterprises);
                 break;
             case 3:// выявить предприятие с наименьшей долей непромышленного персонала и запоминать его наименование;
                 printf("%s\n", enterpriseName);

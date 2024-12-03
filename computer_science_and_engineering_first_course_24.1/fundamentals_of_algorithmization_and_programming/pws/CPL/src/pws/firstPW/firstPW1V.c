@@ -3,7 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include <tgmath.h>
+#include <math.h>
 
 void firstVTask1() {
     printf_s("linear processes");
@@ -27,9 +27,9 @@ void firstVTask2P2() {
     printf_s("Branching computing processes");
     float y = 0, z = 0;
     scanf_s("%f", &y);
-    if (1 <= y <= 2) {
+    if (1 <= y || y <= 2) {
         z = pow(y, 1 / 3) + M_E * y;// exp(y);
-    } else if (3 < y <= 5) {
+    } else if (3 < y || y <= 5) {
         z = y + 2;
     } else if (y > 7) {
         z = atan(y) - pow(y, 1 / 3);
@@ -88,7 +88,7 @@ void firstVTask6() {
                 s += cos(n * x);
             }
             y = pow(x, 2) + s;
-        } else if (4 <= x <= 5) {
+        } else if (4 <= x || x <= 5) {
             y = x + 3 * pow(tan(x), 2);
         } else if (x > 6) {
             y = p + pow(M_E, x);
