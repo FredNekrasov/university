@@ -3,7 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include <tgmath.h>
+#include <math.h>
 #include <time.h>
 
 void secondVTask1() {
@@ -29,7 +29,7 @@ void secondVTask2P2() {
     scanf_s("%f", &y);
     if (y < 5) {
         z = pow(y, 3) + cos(fabsf(y)) - 2;
-    } else if (6 <= y <= 7) {
+    } else if (6 <= y || y <= 7) {
         z = y * 0.5f + log(y);
     } else if (y > 7) {
         z = atan(y);
@@ -48,7 +48,7 @@ void secondVTask4() {
     float a = 0.75f;
     for (float x = -1; x <= 1; x += 0.2f) {
         for (float t = 1; t <= 5; t += 1.5f) {
-            const float y = a * pow(M_E, -x) * sin(x * x) + sqrt( a + y);
+            const float y = a * pow(M_E, -x) * sin(x * x) + sqrt( a + t);
             printf_s("x = %.1f, t = %.1f, y = %.2f\n", x, t, y);
         }
     }
@@ -86,7 +86,7 @@ void secondVTask6() {
                 s += cos(j * y);
             }
             z = fabsf(y) + s;
-        } else if (4 <= y <= 5) {
+        } else if (4 <= y || y <= 5) {
             for (int m = 1; m <= 5; m++) {
                 p = log(m * y);
             }

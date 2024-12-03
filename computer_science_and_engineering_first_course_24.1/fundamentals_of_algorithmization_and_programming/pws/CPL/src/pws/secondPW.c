@@ -2,9 +2,9 @@
 // Created by fred on 21.10.2024.
 //
 #include <stdio.h>
-#include <tgmath.h>
+#include <math.h>
 
-int calculateCircleLenth() {
+int calculateCircleLength() {
     int r;
     printf("enter the radius of the circle: ");
     scanf_s("%d", &r);
@@ -16,7 +16,7 @@ int printMyData() {
     printf("Hello, World!\nAsylbek uulu Bakyt - 09.03.01 24/1 sg/2");
     return 0;
 }
-int calculateLenthBetweenTwoPoints() {
+int calculateLengthBetweenTwoPoints() {
     printf("Hello, World!\n");
     printf("a program to calculate the length between two points\n");
     float xa, ya, xb, yb;
