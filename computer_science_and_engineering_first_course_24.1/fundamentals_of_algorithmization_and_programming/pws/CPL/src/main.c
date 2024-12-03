@@ -62,7 +62,7 @@ void printIAE(const infAboutEnterprise8PW enterprise, const int i) {
     printf("| notIndustrialEmployees: %d\t\t|\n", enterprise.notIndustrialEmployees);
     printf("| notIndustrialEmployeesPercentage: %.2f|\n", enterprise.notIndustrialEmployeesPercentage);
     printf("| planForEmployees: %.2f\t\t|\n", enterprise.planForEmployees);
-    printf("-----------------------------------------\n");
+    printf("+---------------------------------------+\n");
 }
 char* smallestNotIndustrialEmployeesPercentageEnterprise(const int n, const infAboutEnterprise8PW* enterprises) {
     infAboutEnterprise8PW iae = enterprises[0];
@@ -90,6 +90,7 @@ void printLowerBoundOfPlanForEmployees(int n, const infAboutEnterprise8PW* enter
     }
 }
 void seventhPWTasks(int n, infAboutEnterprise8PW* enterprises) {
+    if (enterprises == NULL) return;
     int choice = -1;
     char* enterpriseName = smallestNotIndustrialEmployeesPercentageEnterprise(n, enterprises);
     while (choice != 0) {
@@ -130,15 +131,15 @@ int eightPW3Task() {
                 enterprises = creatingAndFillingIAEs(n);
                 if (enterprises == NULL) return printf("error: enterprises pointer is NULL");
                 enterprises = sortedIAEsByAllEmployees(n, enterprises);
-                file = fopen("C:\\Users\\fred\\Downloads\\8PW3Task.dat", "ab+");
+                file = fopen("C:\\Users\\fred\\Downloads\\8PW3Task.bin", "wb+");
                 if (file == NULL) return printf("error: file not found");
-                for (int i = 0; i < n; i++) fwrite(&enterprises[i], sizeof(enterprises[i]), 1, file);
+                for (int i = 0; i < n; i++) fwrite(&enterprises[i], sizeof(infAboutEnterprise8PW), 1, file);
                 break;
             case 2:
                 enterprises8PW = calloc(n, sizeof(infAboutEnterprise8PW));
                 rewind(file);
                 for (int i = 0; i < n; i++) {
-                    fread(&enterprises8PW[i], sizeof(enterprises8PW[i]), 1, file);
+                    fread(&enterprises8PW[i], sizeof(infAboutEnterprise8PW), 1, file);
                     printIAE(enterprises8PW[i], i);
                 }
                 break;
@@ -157,7 +158,6 @@ int eightPW3Task() {
     if (enterprises != NULL) free(enterprises);
     if (enterprises8PW != NULL) free(enterprises8PW);
     if (file != NULL) fclose(file);
-    if (file != NULL) free(file);
     return 0;
 }
 
