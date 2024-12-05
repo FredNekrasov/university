@@ -58,13 +58,15 @@ int sixthPW3TaskV2() {
         for (int j = 0; j < n; j++) {
             array[i][j] = rand() % 10;
             printf(" %d |", array[i][j]);
-            if (array[i][j] > max) max = array[i][j];
-            if (array[i][j] < min) min = array[i][j];
-            sum += array[i][j];
+            if (array[i][j] > max) {
+                max = array[i][j];
+                sum += max;
+            }
         }
+        if (max < min) min = max;
         printf(" max element in %d row = %d\n", i, max);
     }
-    printf("sum of all elements = %d\n", sum);
-    printf("min = %d\n", min);
+    printf("sum of max elements = %d\n", sum);
+    printf("min of max elements = %d\n", min);
     return 0;
 }
