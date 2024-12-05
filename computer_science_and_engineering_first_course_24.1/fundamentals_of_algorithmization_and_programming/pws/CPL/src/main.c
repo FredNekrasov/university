@@ -15,10 +15,20 @@ struct InformationAboutEnterprise8PW {
     float notIndustrialEmployeesPercentage;
     float planForEmployees;
 } typedef infAboutEnterprise8PW;
-
+/*
+ * First, we allocate memory for n elements of the structure, then we check if the allocation was successful.
+ * If it was not successful, we free the memory and return NULL.
+ * Then, we fill the structure with user input.
+ * if the input of the name is not successful, we free the memory and return NULL.
+ *
+ * notIndustrialEmployeesPercentage and planForEmployees are calculated using allEmployees, industrialEmployees and notIndustrialEmployees.
+ * notIndustrialEmployeesPercentage is a percentage of notIndustrialEmployees to allEmployees, and planForEmployees is a percentage of industrialEmployees and notIndustrialEmployees to allEmployees.
+ *
+ * After that, we return the pointer to the structure.
+ */
 infAboutEnterprise8PW* creatingAndFillingIAEs(int n) {
     infAboutEnterprise8PW* enterprises = calloc(n, sizeof(infAboutEnterprise8PW));
-    if (enterprises == NULL) {
+    if (enterprises == nullptr) {
         free(enterprises);
         return nullptr;
     }
@@ -26,7 +36,7 @@ infAboutEnterprise8PW* creatingAndFillingIAEs(int n) {
         printf("Enterprise %d\n", i + 1);
         printf("name:");
         enterprises[i].name = calloc(20, sizeof(char));
-        if (enterprises[i].name == NULL) {
+        if (enterprises[i].name == nullptr) {
             for (int j = 0; j <= i; j++) free(enterprises[i].name);
             free(enterprises);
             return nullptr;
@@ -38,11 +48,15 @@ infAboutEnterprise8PW* creatingAndFillingIAEs(int n) {
         scanf_s("%d", &enterprises[i].industrialEmployees);
         printf("notIndustrialEmployees:");
         scanf_s("%d", &enterprises[i].notIndustrialEmployees);
-        enterprises[i].notIndustrialEmployeesPercentage = (float)enterprises[i].notIndustrialEmployees / (float)enterprises[i].allEmployees;
-        enterprises[i].planForEmployees = (float)(enterprises[i].industrialEmployees + enterprises[i].notIndustrialEmployees) / (float)enterprises[i].allEmployees;
+        enterprises[i].notIndustrialEmployeesPercentage = ((float)enterprises[i].notIndustrialEmployees / (float)enterprises[i].allEmployees) * 100;
+        enterprises[i].planForEmployees = ((float)(enterprises[i].industrialEmployees + enterprises[i].notIndustrialEmployees) / (float)enterprises[i].allEmployees) * 100;
     }
     return enterprises;
 }
+/*
+ * We sort the structure by allEmployees in descending order using bubble sort.
+ * After that, we return the pointer to the structure.
+ */
 infAboutEnterprise8PW* sortedIAEsByAllEmployees(int n, infAboutEnterprise8PW* enterprises) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = i + 1; j < n; j++) {
@@ -55,15 +69,24 @@ infAboutEnterprise8PW* sortedIAEsByAllEmployees(int n, infAboutEnterprise8PW* en
     }
     return enterprises;
 }
-void printIAE(const infAboutEnterprise8PW enterprise, const int i) {
-    printf("| %d enterprise name: %s\t\t|\n", i + 1, enterprise.name);
-    printf("| allEmployees: %d\t\t\t|\n", enterprise.allEmployees);
-    printf("| industrialEmployees: %d\t\t|\n", enterprise.industrialEmployees);
-    printf("| notIndustrialEmployees: %d\t\t|\n", enterprise.notIndustrialEmployees);
-    printf("| notIndustrialEmployeesPercentage: %.2f|\n", enterprise.notIndustrialEmployeesPercentage);
-    printf("| planForEmployees: %.2f\t\t|\n", enterprise.planForEmployees);
-    printf("+---------------------------------------+\n");
+void printIAETableHeader() {
+    printf("+-----+-----------+-------+-------+------+---------+-----+\n");
+    printf("| Num |    Name   |  AE   |  IE   | NIE  | NIE (%) | PFE |\n");
+    printf("+-----+-----------+-------+-------+------+---------+-----+\n");
 }
+void printIAE(const infAboutEnterprise8PW enterprise, const int i) {
+    printf("| %-3d | %s ", i + 1, enterprise.name);
+    printf("| %d ", enterprise.allEmployees);
+    printf("| %d ", enterprise.industrialEmployees);
+    printf("| %d ", enterprise.notIndustrialEmployees);
+    printf("|    %.0f   ", enterprise.notIndustrialEmployeesPercentage);
+    printf("|  %.0f |\n", enterprise.planForEmployees);
+    printf("+-----+-----------+-------+-------+------+---------+-----+\n");
+}
+/*
+ * We return the name of the enterprise with the smallest notIndustrialEmployeesPercentage
+ * After that, we print the structure
+ */
 char* smallestNotIndustrialEmployeesPercentageEnterprise(const int n, const infAboutEnterprise8PW* enterprises) {
     infAboutEnterprise8PW iae = enterprises[0];
     int iaeIndex = 0;
@@ -76,44 +99,68 @@ char* smallestNotIndustrialEmployeesPercentageEnterprise(const int n, const infA
     printIAE(iae, iaeIndex);
     return iae.name;
 }
+/*
+ * We print the structure if the planForEmployees is greater than or equal to the user input planForEmployees
+ */
 void printIAEFilteredByPlanForEmployees(int n, const infAboutEnterprise8PW* enterprises) {
     float planForEmployees = 0;
-    printf("input planForEmployees:");
+    printf("input planForEmployees (%):");
     scanf_s("%f", &planForEmployees);
+    printIAETableHeader();
     for (int i = 0; i < n; i++) {
         if (enterprises[i].planForEmployees >= planForEmployees) printIAE(enterprises[i], i);
     }
 }
+/*
+ * We print the structure if the planForEmployees is less than 50%
+ */
 void printLowerBoundOfPlanForEmployees(int n, const infAboutEnterprise8PW* enterprises) {
+    printIAETableHeader();
     for (int i = 0; i < n; i++) {
-        if (enterprises[i].planForEmployees < 0.5f) printIAE(enterprises[i], i);
+        if (enterprises[i].planForEmployees < 50.0f) printIAE(enterprises[i], i);
     }
 }
 void seventhPWTasks(int n, infAboutEnterprise8PW* enterprises) {
-    if (enterprises == NULL) return;
+    if (enterprises == nullptr) return;
     int choice = -1;
     char* enterpriseName = smallestNotIndustrialEmployeesPercentageEnterprise(n, enterprises);
     while (choice != 0) {
         printf("Menu for working with enterprises:\n0 - exit\n1 - lowerBoundOfPlanForEmployees\n2 - printIAEFilteredByPlanForEmployees\n3 - smallestNotIndustrialEmployeesPercentageEnterprise\n4 - print all\n0 - exit\ninput i:");
         scanf_s("%d", &choice);
         switch (choice) {
-            case 1:// запрашивать нижнюю границу процента выполнения плана по персоналу;
+            case 1:
                 printLowerBoundOfPlanForEmployees(n, enterprises);
                 break;
-            case 2:// копировать из исходной в рабочую таблицу строки с процентом выполнения плана по персоналу, большим заданного;
+            case 2:
                 printIAEFilteredByPlanForEmployees(n, enterprises);
                 break;
-            case 3:// выявить предприятие с наименьшей долей непромышленного персонала и запоминать его наименование;
+            case 3:
                 printf("%s\n", enterpriseName);
                 break;
             case 4:
-                for (int i = 0; i < n; i++) printIAE(enterprises[i], i);
+                printIAETableHeader();
+                int totalEmployees = 0, totalIndustrialEmployees = 0, totalNotIndustrialEmployees = 0;
+                for (int i = 0; i < n; i++) {
+                    printIAE(enterprises[i], i);
+                    totalEmployees += enterprises[i].allEmployees;
+                    totalIndustrialEmployees += enterprises[i].industrialEmployees;
+                    totalNotIndustrialEmployees += enterprises[i].notIndustrialEmployees;
+                }
+                float totalNotIndustrialEmployeesPercentage = ((float)totalNotIndustrialEmployees / (float)totalEmployees) * 100;
+                float totalPlanForEmployees = ((float)(totalIndustrialEmployees + totalNotIndustrialEmployees) / (float)totalEmployees) * 100;
+                printf("\n\n");
+                printf("| total:\t|\n");
+                printf("| %d ", totalEmployees);
+                printf("| %d ", totalIndustrialEmployees);
+                printf("| %d ", totalNotIndustrialEmployees);
+                printf("| %.0f ", totalNotIndustrialEmployeesPercentage);
+                printf("| %.0f |\n", totalPlanForEmployees);
                 break;
             default:
                 break;
         }
     }
-    free(enterpriseName);
+    if (enterpriseName != nullptr) free(enterpriseName);
 }
 int eightPW3Task() {
     int n = 0;
@@ -122,22 +169,23 @@ int eightPW3Task() {
     if (n <= 0) return printf("error: n <= 0");
     int choice = -1;
     FILE* file = nullptr;
-    infAboutEnterprise8PW* enterprises8PW, *enterprises = nullptr;
+    infAboutEnterprise8PW* enterprises8PW = nullptr, *enterprises = nullptr;
     while (choice != 0) {
         printf("Menu for working with file:\n0 - exit\n1 - create new/(open existing) file and fill enterprises\n2 - print enterprises\n3 - open new menu\ninput i:");
         scanf_s("%d", &choice);
         switch (choice) {
             case 1:
                 enterprises = creatingAndFillingIAEs(n);
-                if (enterprises == NULL) return printf("error: enterprises pointer is NULL");
+                if (enterprises == nullptr) return printf("error: enterprises pointer is NULL");
                 enterprises = sortedIAEsByAllEmployees(n, enterprises);
                 file = fopen("C:\\Users\\fred\\Downloads\\8PW3Task.bin", "wb+");
-                if (file == NULL) return printf("error: file not found");
+                if (file == nullptr) return printf("error: file not found");
                 for (int i = 0; i < n; i++) fwrite(&enterprises[i], sizeof(infAboutEnterprise8PW), 1, file);
                 break;
             case 2:
                 enterprises8PW = calloc(n, sizeof(infAboutEnterprise8PW));
                 rewind(file);
+                printIAETableHeader();
                 for (int i = 0; i < n; i++) {
                     fread(&enterprises8PW[i], sizeof(infAboutEnterprise8PW), 1, file);
                     printIAE(enterprises8PW[i], i);
@@ -152,12 +200,12 @@ int eightPW3Task() {
         }
     }
     for (int i = 0; i < n; i++) {
-        if (enterprises[i].name != NULL) free(enterprises[i].name);
-        if (enterprises8PW[i].name != NULL) free(enterprises8PW[i].name);
+        if (enterprises != nullptr || enterprises[i].name != nullptr) free(enterprises[i].name);
+        if (enterprises8PW != nullptr || enterprises8PW[i].name != nullptr) free(enterprises8PW[i].name);
     }
-    if (enterprises != NULL) free(enterprises);
-    if (enterprises8PW != NULL) free(enterprises8PW);
-    if (file != NULL) fclose(file);
+    if (enterprises != nullptr) free(enterprises);
+    if (enterprises8PW != nullptr) free(enterprises8PW);
+    if (file != nullptr) fclose(file);
     return 0;
 }
 
