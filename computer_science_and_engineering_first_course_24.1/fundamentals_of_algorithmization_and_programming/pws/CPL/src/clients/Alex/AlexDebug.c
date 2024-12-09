@@ -15,10 +15,10 @@ int AlDbg() {
     do {
         M[5][2 + j] = 'A' + j;
         j++;
-    } while (j < 12);
+    } while (j < 6);
     for (i = 6; i >= 2; i--) {
-        for (j = 0; j <= 1; ++j) {
-            M[i][6 - i + j] = M[i][4+i-j] = (j + i) % 2 ? '#' : '*';
+        for (j = 0; j <= 1; j++) {
+            M[i][6 - i + j] = M[i][4 + i - j] = (j + i) % 2 ? '#' : '*';
         }
     }
     while (m < 6) {
@@ -38,7 +38,10 @@ int AlDbg() {
         ++m;
     }
     for (i = 0; i < 7; i++) {
-        printf("%s\n", M[i]);
+        for (j = 0; j < 12; j++) {
+            printf("%c", M[i][j]);
+        }
+        printf("\n");
     }
     return 0;
 }
