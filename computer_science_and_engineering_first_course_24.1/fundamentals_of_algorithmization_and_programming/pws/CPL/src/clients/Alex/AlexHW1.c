@@ -90,6 +90,13 @@ void AlTask2() {
     printMatrix(M, 10, 11);
     printf("\nsimple print:\n");
     for (i = 0; i < 10; ++i) printf("%s\n", M[i]);
+    // or
+    char V[10][11] = { 0 };
+    F18(V, 5, 0, 3, 3, '/');
+    F17(V, 0, 3, 8, 3, '*');
+    F2(V, 1, 4, 6, '.');
+    F3(V, 8, 0, 2, 11, '~');
+    printMatrix(V, 10, 11);
 }
 int A(int x) {
     if (x > 7) return 1; else return 0;
